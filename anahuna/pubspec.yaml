@@ -1,0 +1,44 @@
+name: anahuna
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  camera: ^0.11.1
+  web_socket_channel: ^3.0.3
+  image: ^4.5.4
+  provider: ^6.1.4
+  flutter_tts: ^4.2.2
+  http: ^1.3.0
+  google_fonts: ^6.2.1
+  page_transition: ^2.2.1
+  url_launcher: ^6.3.1
+  flutter_launcher_icons: ^0.14.3
+  flutter_native_splash: ^2.4.6
+  shared_preferences: ^2.5.3
+
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/appimage.png"
+flutter_native_splash:
+  color: "#053B50"  
+  image: assets/images/native_splash.png
+  android_gravity: center
+  ios_content_mode: contain
+  
+  android_12:
+    image: assets/images/native_splash.png
+    icon_background_color: "#053B50"
+    image_dark: assets/images/native_splash.png
+    color_dark: "#053B50"
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
