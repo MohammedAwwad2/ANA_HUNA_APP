@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-// Reusable TextField Widget
+
 Widget inputData(
   TextEditingController ctrl,
   String hint, {
@@ -35,12 +35,12 @@ Widget inputData(
           ),
         ),
       ),
-      // Always reserve space for error message
+
       SizedBox(
         height: 20,
         child:
             isValid
-                ? const SizedBox.shrink() // empty space, same height
+                ? const SizedBox.shrink() 
                 : Padding(
                   padding: EdgeInsets.symmetric(vertical: 3),
                   child: Text(

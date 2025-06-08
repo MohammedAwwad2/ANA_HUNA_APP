@@ -56,20 +56,20 @@ class MainActivity : FlutterActivity() {
             return ByteArray(0)
         }
 
-        // Calculate sizes once
+
         val ySize = width * height
         val uvSize = width * height / 4
         val totalSize = ySize + 2 * uvSize
 
-        // Get plane data efficiently
+
         val y = (planes[0]["bytes"] as? ByteArray) ?: return ByteArray(0)
         val u = (planes[1]["bytes"] as? ByteArray) ?: return ByteArray(0)
         val v = (planes[2]["bytes"] as? ByteArray) ?: return ByteArray(0)
 
-        // Reuse buffer from pool
+   
         val nv21 = getBuffer(totalSize)
 
-        // Efficient Y plane copy
+
         System.arraycopy(y, 0, nv21, 0, ySize)
 
         // Optimized UV interleaving
@@ -80,7 +80,7 @@ class MainActivity : FlutterActivity() {
             nv21[pos++] = u[i]
         }
 
-        // Create and compress YUV image
+ 
         val out = ByteArrayOutputStream()
         val yuvImage = YuvImage(nv21, ImageFormat.NV21, width, height, null)
         yuvImage.compressToJpeg(Rect(0, 0, width, height), quality, out)
